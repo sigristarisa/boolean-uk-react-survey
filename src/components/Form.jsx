@@ -2,14 +2,13 @@ import RadioButtons from "./RadioButtons";
 import Checkboxes from "./Checkboxes";
 
 const Form = (props) => {
+  const handleSubmit = props.handleSubmit;
   const handleAnswer = props.handleAnswer;
   const features = props.answers.features;
   const spendTime = props.answers.spendTime;
-  const survey = props.survey;
-  const surveyNames = Object.keys(survey);
 
   return (
-    <form className="form">
+    <form className="form" onSubmit={handleSubmit}>
       <h2>Tell us what you think about your rubber duck!</h2>
       <div className="form__group checkbox">
         <h3>
@@ -18,28 +17,36 @@ const Form = (props) => {
         <Checkboxes
           handleAnswer={handleAnswer}
           answers={features}
-          name={surveyNames[0]}
+          name={"bestFeature"}
         />
       </div>
       <div className="form__group checkbox">
         <h3>What would you say that are the worst bits of your rubber duck?</h3>
-        <Checkboxes answers={features} name={surveyNames[1]} />
+        <Checkboxes
+          handleAnswer={handleAnswer}
+          answers={features}
+          name={"worstFeature"}
+        />
       </div>
       <div className="form__group radio">
         <h3>How do you rate your rubber duck consistency?</h3>
-        <RadioButtons />
+        <RadioButtons handleAnswer={handleAnswer} name={"consistencyRate"} />
       </div>
       <div className="form__group radio">
         <h3>How do you rate your rubber duck colour?</h3>
-        <RadioButtons />
+        <RadioButtons handleAnswer={handleAnswer} name={"colorRate"} />
       </div>
       <div className="form__group radio">
         <h3>How do you rate your rubber duck logo?</h3>
-        <RadioButtons />
+        <RadioButtons handleAnswer={handleAnswer} name={"logoRate"} />
       </div>
       <div className="form__group checkbox">
         <h3>How do you like to spend time with your rubber duck?</h3>
-        <Checkboxes answers={spendTime} name={surveyNames[5]} />
+        <Checkboxes
+          handleAnswer={handleAnswer}
+          answers={spendTime}
+          name={"spendTime"}
+        />
       </div>
 
       <label>

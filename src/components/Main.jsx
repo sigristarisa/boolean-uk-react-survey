@@ -3,9 +3,9 @@ import Form from "./Form";
 
 const Main = (props) => {
   const [open, setOpen] = useState(false);
+  const handleSubmit = props.handleSubmit;
   const handleAnswer = props.handleAnswer;
   const answers = props.answers;
-  const survey = props.survey;
 
   return (
     <main className="main">
@@ -14,7 +14,11 @@ const Main = (props) => {
         {/* answers should go here */}
       </section>
       <section className="main__form">
-        <Form handleAnswer={handleAnswer} answers={answers} survey={survey} />
+        <Form
+          handleSubmit={handleSubmit}
+          handleAnswer={handleAnswer}
+          answers={answers}
+        />
       </section>
     </main>
   );
