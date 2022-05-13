@@ -16,6 +16,16 @@ const initialSurvey = {
   email: "",
 };
 
+const answers = {
+  features: ["It's yellow!", "It squeaks!", "It has a logo!", "It's big!"],
+  spendTime: [
+    "Swimming",
+    "Bathing",
+    "Chatting",
+    "I don't like to spend time with it",
+  ],
+};
+
 const App = () => {
   const [survey, setSurvey] = useState(initialSurvey);
   const [bestFeature, setBestFeature] = useState(initialSurvey.bestFeature);
@@ -29,10 +39,11 @@ const App = () => {
     }
   };
 
+  console.log(answers.features);
   return (
     <div className="App">
       <Header />
-      <Main handleAnswer={handleAnswer} />
+      <Main handleAnswer={handleAnswer} answers={answers} />
     </div>
   );
 };
