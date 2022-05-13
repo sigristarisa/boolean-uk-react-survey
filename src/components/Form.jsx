@@ -5,6 +5,8 @@ const Form = (props) => {
   const handleAnswer = props.handleAnswer;
   const features = props.answers.features;
   const spendTime = props.answers.spendTime;
+  const survey = props.survey;
+  const surveyNames = Object.keys(survey);
 
   return (
     <form className="form">
@@ -13,11 +15,15 @@ const Form = (props) => {
         <h3>
           What would you say that are the best features of your rubber duck?
         </h3>
-        <Checkboxes handleAnswer={handleAnswer} answers={features} />
+        <Checkboxes
+          handleAnswer={handleAnswer}
+          answers={features}
+          name={surveyNames[0]}
+        />
       </div>
       <div className="form__group checkbox">
         <h3>What would you say that are the worst bits of your rubber duck?</h3>
-        <Checkboxes answers={features} />
+        <Checkboxes answers={features} name={surveyNames[1]} />
       </div>
       <div className="form__group radio">
         <h3>How do you rate your rubber duck consistency?</h3>
@@ -33,7 +39,7 @@ const Form = (props) => {
       </div>
       <div className="form__group checkbox">
         <h3>How do you like to spend time with your rubber duck?</h3>
-        <Checkboxes answers={spendTime} />
+        <Checkboxes answers={spendTime} name={surveyNames[5]} />
       </div>
 
       <label>

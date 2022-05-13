@@ -32,18 +32,16 @@ const App = () => {
 
   const handleAnswer = (e) => {
     const { name, value, checked } = e.target;
-    if (name === "feature") {
-      const clickedFeatures = [...bestFeature, value];
-      setBestFeature(clickedFeatures);
+    if (name === "bestFeature") {
+      const clickedBestFeatures = [...bestFeature, value];
+      setBestFeature(clickedBestFeatures);
       setSurvey({ ...survey, bestFeature: bestFeature });
     }
   };
-
-  console.log(answers.features);
   return (
     <div className="App">
       <Header />
-      <Main handleAnswer={handleAnswer} answers={answers} />
+      <Main handleAnswer={handleAnswer} answers={answers} survey={survey} />
     </div>
   );
 };
