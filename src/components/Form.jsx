@@ -1,7 +1,9 @@
 import RadioButtons from "./RadioButtons";
 import Checkboxes from "./Checkboxes";
 
-const Form = () => {
+const Form = (props) => {
+  const handleAnswer = props.handleAnswer;
+
   return (
     <form className="form">
       <h2>Tell us what you think about your rubber duck!</h2>
@@ -9,7 +11,7 @@ const Form = () => {
         <h3>
           What would you say that are the best features of your rubber duck?
         </h3>
-        <Checkboxes />
+        <Checkboxes handleAnswer={handleAnswer} />
       </div>
       <div className="form__group checkbox">
         <h3>What would you say that are the worst bits of your rubber duck?</h3>

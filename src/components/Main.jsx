@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Form from "./Form";
 
-const Main = () => {
+const Main = (props) => {
   const [open, setOpen] = useState(false);
+  const handleAnswer = props.handleAnswer;
 
   return (
     <main className="main">
@@ -11,7 +12,7 @@ const Main = () => {
         {/* answers should go here */}
       </section>
       <section className="main__form">
-        <Form />
+        <Form handleAnswer={handleAnswer} />
       </section>
     </main>
   );
