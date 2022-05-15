@@ -10,10 +10,10 @@ const Checkboxes = (props) => {
       {answers.map((answer, index) => (
         <Checkbox
           key={index}
-          answer={answer}
           name={name}
+          answer={answer}
           handleAnswer={handleAnswer}
-          checked={answer.checked}
+          checked={checked}
         />
       ))}
     </ul>
