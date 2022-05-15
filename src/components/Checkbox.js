@@ -1,9 +1,4 @@
-const Checkbox = (props) => {
-  const handleAnswer = props.handleAnswer;
-  const answer = props.answer;
-  const name = props.name;
-  const checked = props.checked;
-
+const Checkbox = ({ handleAnswer, answer, name, checked }) => {
   return (
     <li>
       <label>

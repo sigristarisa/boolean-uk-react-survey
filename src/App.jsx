@@ -16,11 +16,11 @@ const initialSurvey = {
   username: "",
   email: "",
 };
-
 const spendTimeAnswers = Object.keys(initialSurvey.spendTime);
 
 const App = () => {
   const [survey, setSurvey] = useState(initialSurvey);
+  const [answerList, setAnswerList] = useState([]);
 
   const handleAnswer = (e) => {
     const { name, value, checked } = e.target;
@@ -45,7 +45,8 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(survey);
+    setAnswerList([...answerList, survey]);
+    setSurvey(initialSurvey);
   };
 
   return (
@@ -56,6 +57,7 @@ const App = () => {
         handleAnswer={handleAnswer}
         survey={survey}
         spendTimeAnswers={spendTimeAnswers}
+        answerList={answerList}
       />
     </div>
   );

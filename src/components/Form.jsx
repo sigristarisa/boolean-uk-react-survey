@@ -1,12 +1,7 @@
 import RadioButtons from "./RadioButtons";
 import Checkboxes from "./Checkboxes";
 
-const Form = (props) => {
-  const handleSubmit = props.handleSubmit;
-  const handleAnswer = props.handleAnswer;
-  const survey = props.survey;
-  const spendTimeAnswers = props.spendTimeAnswers;
-
+const Form = ({ handleSubmit, handleAnswer, survey, spendTimeAnswers }) => {
   return (
     <form className="form" onSubmit={handleSubmit}>
       <h2>Tell us what you think about your rubber duck!</h2>

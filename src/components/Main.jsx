@@ -1,18 +1,21 @@
 import { useState } from "react";
 import Form from "./Form";
+import AnswerList from "./AnswerList.js";
 
-const Main = (props) => {
+const Main = ({
+  handleSubmit,
+  handleAnswer,
+  survey,
+  spendTimeAnswers,
+  answerList,
+}) => {
   const [open, setOpen] = useState(false);
-  const handleSubmit = props.handleSubmit;
-  const handleAnswer = props.handleAnswer;
-  const survey = props.survey;
-  const spendTimeAnswers = props.spendTimeAnswers;
 
   return (
     <main className="main">
       <section className={`main__list ${open ? "open" : ""}`}>
         <h2>Answers list</h2>
-        {/* answers should go here */}
+        <AnswerList answerList={answerList} />
       </section>
       <section className="main__form">
         <Form

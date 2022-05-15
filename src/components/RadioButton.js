@@ -1,9 +1,4 @@
-const RadioButton = (props) => {
-  const id = props.id;
-  const name = props.name;
-  const value = props.value;
-  const handleAnswer = props.handleAnswer;
-
+const RadioButton = ({ id, name, value, handleAnswer }) => {
   return (
     <li>
       <input

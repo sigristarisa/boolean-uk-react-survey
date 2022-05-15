@@ -1,8 +1,6 @@
 import RadioButton from "./RadioButton";
 
-const RadioButtons = (props) => {
-  const handleAnswer = props.handleAnswer;
-  const name = props.name;
+const RadioButtons = ({ handleAnswer, name }) => {
   return (
     <ul>
       <RadioButton
