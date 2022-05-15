@@ -5,7 +5,7 @@ const Main = (props) => {
   const [open, setOpen] = useState(false);
   const handleSubmit = props.handleSubmit;
   const handleAnswer = props.handleAnswer;
-  const answers = props.answers;
+  const survey = props.survey;
 
   return (
     <main className="main">
@@ -17,7 +17,7 @@ const Main = (props) => {
         <Form
           handleSubmit={handleSubmit}
           handleAnswer={handleAnswer}
-          answers={answers}
+          survey={survey}
         />
       </section>
     </main>

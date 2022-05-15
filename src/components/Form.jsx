@@ -4,8 +4,10 @@ import Checkboxes from "./Checkboxes";
 const Form = (props) => {
   const handleSubmit = props.handleSubmit;
   const handleAnswer = props.handleAnswer;
-  const features = props.answers.features;
-  const spendTime = props.answers.spendTime;
+  const survey = props.survey;
+
+  const features = Object.keys(survey.bestFeature);
+  const spendTime = Object.keys(survey.spendTime);
 
   return (
     <form className="form" onSubmit={handleSubmit}>

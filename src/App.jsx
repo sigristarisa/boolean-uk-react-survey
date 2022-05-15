@@ -5,25 +5,30 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 
 const initialSurvey = {
-  bestFeature: [],
-  worstFeature: [],
+  bestFeature: {
+    "It is yellow!": false,
+    "It squeaks!": false,
+    "It has a logo!": false,
+    "It's big!": false,
+  },
+  worstFeature: {
+    "It is yellow!": false,
+    "It squeaks!": false,
+    "It has a logo!": false,
+    "It's big!": false,
+  },
   consistencyRate: "",
   colorRate: "",
   logoRate: "",
-  spendTime: [],
+  spendTime: {
+    Swimming: false,
+    Bathing: false,
+    Chatting: false,
+    "I don't like to spend time with it": false,
+  },
   review: "",
   username: "",
   email: "",
-};
-
-const answers = {
-  features: ["It's yellow!", "It squeaks!", "It has a logo!", "It's big!"],
-  spendTime: [
-    "Swimming",
-    "Bathing",
-    "Chatting",
-    "I don't like to spend time with it",
-  ],
 };
 
 const App = () => {
@@ -33,8 +38,8 @@ const App = () => {
   const [spendTime, setSpendTime] = useState(initialSurvey.spendTime);
 
   const handleAnswer = (e) => {
+    console.log(e.target);
     const { name, value, checked } = e.target;
-    console.log(name);
     if (name === "bestFeature") {
       const clickedBestFeatures = [...bestFeature, value];
       setBestFeature(clickedBestFeatures);
@@ -75,7 +80,6 @@ const App = () => {
       <Main
         handleSubmit={handleSubmit}
         handleAnswer={handleAnswer}
-        answers={answers}
         survey={survey}
       />
     </div>
