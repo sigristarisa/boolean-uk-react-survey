@@ -5,6 +5,7 @@ const Main = (props) => {
   const [open, setOpen] = useState(false);
   const handleSubmit = props.handleSubmit;
   const handleAnswer = props.handleAnswer;
+  const survey = props.survey;
   const spendTimeAnswers = props.spendTimeAnswers;
 
   return (
@@ -17,6 +18,7 @@ const Main = (props) => {
         <Form
           handleSubmit={handleSubmit}
           handleAnswer={handleAnswer}
+          survey={survey}
           spendTimeAnswers={spendTimeAnswers}
         />
       </section>

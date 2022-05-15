@@ -28,7 +28,15 @@ const App = () => {
       setSurvey({ ...survey, colorRate: value });
     }
     if (name === "spendTime") {
-      setSurvey({ ...survey.name, [value]: !checked });
+      const clickedAnswer = { ...survey[name], [value]: checked };
+      console.log(clickedAnswer);
+      setSurvey({ ...survey, spendTime: clickedAnswer });
+    }
+    if (name === "review") {
+      setSurvey({ ...survey, review: value });
+    }
+    if (name === "username") {
+      setSurvey({ ...survey, username: value });
     }
     if (name === "email") {
       setSurvey({ ...survey, email: value });
@@ -46,6 +54,7 @@ const App = () => {
       <Main
         handleSubmit={handleSubmit}
         handleAnswer={handleAnswer}
+        survey={survey}
         spendTimeAnswers={spendTimeAnswers}
       />
     </div>

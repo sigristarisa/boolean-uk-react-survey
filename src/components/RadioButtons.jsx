@@ -6,27 +6,27 @@ const RadioButtons = (props) => {
   return (
     <ul>
       <RadioButton
-        id={"rate-one"}
+        id="rate-one"
         name={name}
-        value={"1"}
+        value="1"
         handleAnswer={handleAnswer}
       />
       <RadioButton
-        id={"rate-two"}
+        id="rate-two"
         name={name}
-        value={"2"}
+        value="2"
         handleAnswer={handleAnswer}
       />
       <RadioButton
-        id={"rate-three"}
+        id="rate-three"
         name={name}
-        value={"3"}
+        value="3"
         handleAnswer={handleAnswer}
       />
       <RadioButton
-        id={"rate-four"}
+        id="rate-four"
         name={name}
-        value={"4"}
+        value="4"
         handleAnswer={handleAnswer}
       />
     </ul>

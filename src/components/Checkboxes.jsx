@@ -3,7 +3,7 @@ const Checkboxes = (props) => {
   const handleAnswer = props.handleAnswer;
   const answers = props.answers;
   const name = props.name;
-  const checked = props.checked;
+  const survey = props.survey;
 
   return (
     <ul className="checkbox-wrapper">
@@ -13,7 +13,7 @@ const Checkboxes = (props) => {
           name={name}
           answer={answer}
           handleAnswer={handleAnswer}
-          checked={checked}
+          checked={survey.answer}
         />
       ))}
     </ul>
