@@ -20,6 +20,7 @@ const Form = (props) => {
           handleAnswer={handleAnswer}
           answers={features}
           name={"bestFeature"}
+          checked={survey.bestFeature}
         />
       </div>
       <div className="form__group checkbox">
@@ -28,6 +29,7 @@ const Form = (props) => {
           handleAnswer={handleAnswer}
           answers={features}
           name={"worstFeature"}
+          checked={survey.worstFeature}
         />
       </div>
       <div className="form__group radio">
@@ -48,6 +50,7 @@ const Form = (props) => {
           handleAnswer={handleAnswer}
           answers={spendTime}
           name={"spendTime"}
+          checked={survey.spendTime}
         />
       </div>
 

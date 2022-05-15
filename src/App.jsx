@@ -33,17 +33,13 @@ const initialSurvey = {
 
 const App = () => {
   const [survey, setSurvey] = useState(initialSurvey);
-  const [bestFeature, setBestFeature] = useState(initialSurvey.bestFeature);
-  const [worstFeature, setWorstFeature] = useState(initialSurvey.worstFeature);
-  const [spendTime, setSpendTime] = useState(initialSurvey.spendTime);
 
   const handleAnswer = (e) => {
     console.log(e.target);
     const { name, value, checked } = e.target;
     if (name === "bestFeature") {
-      const clickedBestFeatures = [...bestFeature, value];
-      setBestFeature(clickedBestFeatures);
-      setSurvey({ ...survey, bestFeature: bestFeature });
+      setSurvey({ ...survey, bestFeature[value]: !checked });
+      console.log(value, survey.bestFeature[value]);
     }
     if (name === "worstFeature") {
       const clickedWorstFeatures = [...worstFeature, value];
